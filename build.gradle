@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'io.inion.os.communication'
+version = '0.0.1'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    api 'io.inion.os.common:common:0.0.1'
+
+    implementation 'io.rsocket:rsocket-core:1.1.1'
+    implementation 'io.rsocket:rsocket-transport-netty:1.1.1'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+
